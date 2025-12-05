@@ -17,7 +17,8 @@ export const sendMessageToMason = async (
 ): Promise<string> => {
   if (!apiKey) {
     console.error("ERRO: Chave da API Groq ausente.");
-    return "*James olha para você confuso.* \n\n(Erro de Sistema: API Key não configurada. Abra services/groqService.ts e cole sua chave na variável LOCAL_KEY)";
+    console.error("Configure a variável VITE_GROQ_API_KEY em .env.local");
+    return "*James olha para você confuso, servindo-se de um copo de uísque.* \n\n(Erro de Configuração: API Key não configurada. Crie um arquivo .env.local na raiz do projeto com sua chave Groq. Veja .env.local.example para mais detalhes.)";
   }
 
   try {
